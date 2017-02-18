@@ -31,9 +31,11 @@ names(baltimore_sum) <- c('year', 'totalemission')
 
 # Plot to a png file
 png('plot2.png')
-plot(baltimore_sum$year, baltimore_sum$totalemission, type = 'o', xlab = 'Year', 
+plot(baltimore_sum$year, baltimore_sum$totalemission, pch = 16, xlab = 'Year', 
      ylab = 'Total Annual Emission (tons)', 
      main = 'PM 2.5 Emissions from All Sources vs Year in Baltimore City')
+
+abline(lm(totalemission ~ year, data = baltimore_sum))
 dev.off()
 
 # Variable clean up

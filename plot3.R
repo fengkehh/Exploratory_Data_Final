@@ -38,11 +38,12 @@ baltimore_type_sum$type <- factor(baltimore_type_sum$type)
 # Plot and save to a png file
 qplot(year, y = totalemission, data = baltimore_type_sum, 
            color = type, 
-           geom = 'line',
+           geom = 'point',
            xlab = 'Year',
            ylab = 'Total Annual Emissions (tons)', 
            main = 'Total Annual Emissions by Type in Baltimore City vs Year') +
-    theme(plot.title = element_text(hjust = 0.5))
+    theme(plot.title = element_text(hjust = 0.5)) +
+    geom_smooth(method = 'lm', se = FALSE)
 
 ggsave(file = 'plot3.png', width = 10)
 

@@ -39,9 +39,11 @@ names(mv_annual) <- names(mv_annual) <- c('year', 'totalemission')
 
 # Plot and save to a png file
 png('plot5.png')
-plot(mv_annual$year, mv_annual$totalemission, type = 'o', xlab = 'Year', 
+plot(mv_annual$year, mv_annual$totalemission, pch = 16, xlab = 'Year', 
      ylab = 'Total Annual Emission (tons)', 
      main = 'PM 2.5 Emissions from Motor Vehicle Sources in Baltimore City')
+
+abline(lm(totalemission ~ year, data = mv_annual))
 dev.off()
 
 # Variable clean up

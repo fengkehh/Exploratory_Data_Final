@@ -31,9 +31,11 @@ names(year_sum) <- c('year', 'totalemission')
 
 # Plot to a png file
 png('plot1.png')
-plot(year_sum$year, year_sum$totalemission, type = 'o', xlab = 'Year', 
+plot(year_sum$year, year_sum$totalemission, pch = 16, xlab = 'Year', 
      ylab = 'Total Annual Emission (tons)', 
      main = 'PM 2.5 Emissions from All Sources vs Year in the U.S.')
+
+abline(lm(totalemission ~ year, data = year_sum))
 dev.off()
 
 # Variable clean up

@@ -38,9 +38,11 @@ names(coal_annual) <- c('year', 'totalemission')
 
 # Plot and save to a png file
 png('plot4.png')
-plot(coal_annual$year, coal_annual$totalemission, type = 'o', xlab = 'Year', 
+plot(coal_annual$year, coal_annual$totalemission, pch = 16, xlab = 'Year', 
      ylab = 'Total Annual Emission (tons)', 
      main = 'PM 2.5 Emissions from Coal Sources vs Year in the U.S.')
+
+abline(lm(totalemission ~ year, data = coal_annual))
 dev.off()
 
 # Variable clean up
