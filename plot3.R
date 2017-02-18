@@ -45,3 +45,6 @@ qplot(year, y = totalemission, data = baltimore_type_sum,
     theme(plot.title = element_text(hjust = 0.5))
 
 ggsave(file = 'plot3.png', width = 10)
+
+# Variable clean up
+rm(list = setdiff(ls(), c('data', 'code')))

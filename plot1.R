@@ -35,3 +35,6 @@ plot(year_sum$year, year_sum$totalemission, type = 'o', xlab = 'Year',
      ylab = 'Total Annual Emission (tons)', 
      main = 'PM 2.5 Emissions from All Sources vs Year in the U.S.')
 dev.off()
+
+# Variable clean up
+rm(list = setdiff(ls(), c('data', 'code')))

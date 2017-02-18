@@ -35,3 +35,6 @@ plot(baltimore_sum$year, baltimore_sum$totalemission, type = 'o', xlab = 'Year',
      ylab = 'Total Annual Emission (tons)', 
      main = 'PM 2.5 Emissions from All Sources vs Year in Baltimore City')
 dev.off()
+
+# Variable clean up
+rm(list = setdiff(ls(), c('data', 'code')))
